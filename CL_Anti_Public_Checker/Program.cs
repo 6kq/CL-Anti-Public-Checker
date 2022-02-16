@@ -12,15 +12,13 @@ namespace CL_Anti_Public_Checker
     {
         static void Main(string[] args)
         {
-            int count = 0;
             Util.RequestUtil.getHashesInDB();
             foreach(string p in File.ReadAllLines("data.txt"))
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                if (Util.RequestUtil.HashExists(Util.HashUtil.sha256(p))) Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(p);
-                count++;
-                Console.Title = count.ToString();   
+                Console.ForegroundColor = ConsoleColor.Green;
+                if (Util.RequestUtil.HashExists(Util.HashUtil.sha256(p))) Console.WriteLine(p);
+                Util.StorageUtil.count++;
+                Console.Title = Util.StorageUtil.count.ToString();   
             }
             Console.ReadLine();
         }
