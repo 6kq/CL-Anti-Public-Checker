@@ -9,5 +9,7 @@ namespace CL_Anti_Public_Checker.Util
     internal class StorageUtil
     {
         public static string baseUrl = "http://localhost:3000";
+
+        public static int count = 0;
     }
 }
